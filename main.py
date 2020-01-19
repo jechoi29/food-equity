@@ -1,4 +1,4 @@
-import urllib.request, urllib.error, urllib.parse, json
+import urllib.request, urllib.error, urllib.parse, json, webbrowser
 
 def pretty(obj):
     return json.dumps(obj, sort_keys=True, indent=2)
@@ -17,10 +17,10 @@ def safeGet(url):
 
 # Return a dictionary with Search Recipes Complex
 # https://spoonacular.com/food-api/docs#Search-Recipes-Complex
-def searchByIngredient(include="", exclude="", number=2):
+def searchByIngredient(include="", exclude="peanuts", number=10):
     base_url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {}
-    params['apiKey'] = '15beae55a2934f559bd57ef947c28e1f'
+    params['apiKey'] = '113d3c952bf94674b9f1ed7ea424294e'
     if include != "":
         params['includeIngredients'] = include
     if exclude != "":
@@ -49,7 +49,7 @@ class Recipes():
         self.image = recipe['results'][i]['image']
         self.readyIn = recipe['results'][i]['readyInMinutes']
         self.servings = recipe['results'][i]['servings']
-        self.pricePerServings = '$' + str(recipe['results'][i]['pricePerServing'])
+        self.pricePerServings = '$' + str(int(recipe['results'][i]['pricePerServing']) / 100)
         list = []
         for step in recipe['results'][0]['analyzedInstructions'][0]['steps']:
             for ingredient in step['ingredients']:
@@ -59,6 +59,19 @@ class Recipes():
         self.url = recipe['results'][0]['sourceUrl']
 
 list = []
-for i in range(2):
+for i in range(10):
     list.append(Recipes(searchByIngredient(), i))
-    print(i)
+
+dict = {}
+dict['recipes'] = list
+
+
+    # combine the template and write output
+import jinja2, os
+
+JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)), extensions=['jinja2.ext.autoescape'], autoescape=True)
+template = JINJA_ENVIRONMENT.get_template('recipesTemplate.html')
+
+f = open('recipesOutput.html', 'w')
+f.write(template.render(dict))
+f.close()
