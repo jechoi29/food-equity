@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>pls let us win</title>
+    <title>About Us</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:800,300|Nanum+Gothic'
     rel='stylesheet'>
   </head>
@@ -19,12 +19,34 @@
       <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'search.html';">Search</button>
       <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'foodbank.html';">For Food Banks</button>
       <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'info.html';">About Us</button>
+      </p>
     </div>
-    <!-- Google Custom Search Element -->
-<div id=”cse” style=”width:100%;”>Loading</div>
-<script src=”http://www.google.com/jsapi” type=”text/javascript”></script>
-<script type=”text/javascript”>google.load(‘search’, ‘1’);
-          google.setOnLoadCallback(function(){var cse = new google.search.
-          CustomSearchControl();cse.draw(‘cse’);}, true);</script>
-  </body>
-</html>
+<div align="center">
+    <br><br><br><br>
+    <h1>Recipe Filter</h1>
+</div>
+<form class="form" action="recipesOutput.html" method="post">
+    <div style="width:600px; margin:0 auto;">
+        <h2 class="features" align="center"><br>Select your food restriction(s):<br><br></h2>
+        <div class= "grid-container">
+            <div class="item2" align="left">
+                <input type="radio" name="genre" value="10751" checked> Peanuts<br><br>
+                <input type="radio" name="genre" value="14"> Pistachio<br><br>
+                <input type="radio" name="genre" value="36"> Walnut<br><br>
+                <input type="radio" name="genre" value="27"> Almond<br></div>
+            <div class="item3" align="left">
+                <input type="radio" name="genre" value="10402"> Wheat<br><br>
+                <input type="radio" name="genre" value="9648"> Milk<br><br>
+                <input type="radio" name="genre" value="10749"> Soy<br><br>
+                <input type="radio" name="genre" value="878"> Eggs<br></div>
+            <div class="item4" align="left">
+                <input type="radio" name="genre" value="10770"> Tuna<br><br>
+                <input type="radio" name="genre" value="10752"> Shrimp<br><br>
+                <input type="radio" name="genre" value="37"> Crab<br></div>
+            <h2><br></h2>
+        </div>
+        <div align="center">
+            <button id="searchButton" onclick="window.location.href = 'recipesOutput.html';"> Filter </button>
+        </div>
+    </div>
+</form>
