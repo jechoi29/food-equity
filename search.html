@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>pls let us win</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:800,300|Nanum+Gothic'
+    rel='stylesheet'>
+  </head>
+  <body>
+    <div id="top">
+      <img id="topImage" src="RecipeRadar.png">
+      <h1><strong>Recipe Radar</strong></h1>
+      <h2 id="intro"><em>Delicious recipes for your dietary needs!</em></h2>
+    </div>
+    <div id="introBox">
+    </div>
+    <div id="menuBar">
+      <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'index.html';">Home</button>
+      <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'search.html';">Search</button>
+      <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'foodbank.html';">For Food Banks</button>
+      <button class="menuItems" style="font-family:sans-serif" onclick="window.location.href = 'info.html';">About Us</button>
+    </div>
+    <!-- Google Custom Search Element -->
+<div id=”cse” style=”width:100%;”>Loading</div>
+<script src=”http://www.google.com/jsapi” type=”text/javascript”></script>
+<script type=”text/javascript”>google.load(‘search’, ‘1’);
+          google.setOnLoadCallback(function(){var cse = new google.search.
+          CustomSearchControl();cse.draw(‘cse’);}, true);</script>
+  </body>
+</html>
