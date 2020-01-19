@@ -1,0 +1,68 @@
+body {
+  background-color: #DCFDD7;
+}
+
+#topImage {
+  display: inline;
+  margin-left: 70px;
+  height: 200px;
+  width: auto;
+}
+#top {
+  background-color: #BDEAF8;
+  margin: -10px;
+}
+h1 {
+  display: inline;
+  font-family: Montserrat, cursive;
+  font-size: 300%;
+  color: /*#E1F3EC*/black;
+  font-weight: 700;
+  margin-top: -100px;
+  padding-bottom: 120px;
+}
+
+#introBox {
+  border: none;
+  margin-left: 50px;
+  margin-right: 60%;
+  background-color: white;
+}
+#intro {
+  font-size: 36px;
+  color: black;
+  font-family: 'Nanum Gothic';
+  background-color: white;
+  padding-left: 16%;
+}
+button {
+  background-color: #40849A;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  padding: 15px 32px;
+  font-size: 48px;
+  align-content: center;
+  font-family: sans-serif;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: white;
+  color: #40849A;
+}
+
+#features {
+
+}
+
+ul,li {
+  list-style:none;
+  padding-top: 20px;
+  font-family: fantasy;
+}
+li {
+  text-align: left;
+}
